@@ -8,7 +8,8 @@ const createTask = async (req, res) => {
 
 // r do CRUD - read
 const findAll = async (req, res) => {
-  res.status(200).json({ message: 'ok' });
+  const tasks = await tasksModel.findAll();
+  return res.status(200).json(tasks);
 };
 
 // u de crud - update
