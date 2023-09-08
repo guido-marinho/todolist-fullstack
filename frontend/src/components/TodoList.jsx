@@ -7,16 +7,19 @@ const TodoList = () => {
 
   const URL = 'http://localhost:3001/tasks';
 
+  // useEffect que roda apenas uma vez, quando o componente é montado e  renderizado pela primeira vez, para buscar as tarefas do backend
   useEffect(() => {
     fetchTasks();
   }, []);
 
+  // r do crud
   const fetchTasks = async () => {
     const response = await fetch(URL);
     const data = await response.json();
     setTasks(data);
   };
 
+  // c do crud
   const createTask = async (event) => {
     event.preventDefault();
 
@@ -34,6 +37,7 @@ const TodoList = () => {
     setNewTask('');
   };
 
+  // u do crud
   const updateTask = async (task) => {
     const { id, title, created_at, status } = task;
 
@@ -48,6 +52,7 @@ const TodoList = () => {
     fetchTasks();
   };
 
+  // d do crud
   const deleteTask = async (id) => {
     await fetch(`${URL}/${id}`, {
       method: 'DELETE',
@@ -109,36 +114,38 @@ const TodoList = () => {
   };
 
   return (
-    <div>
-      <main>
-        <form className="add-form" onSubmit={createTask}>
-          <input
-            type="text"
-            placeholder="Adicionar tarefa"
-            className="input-task"
-            value={newTask}
-            onChange={(e) => setNewTask(e.target.value)}
-          />
-          <button type="submit" className="btn-form">
-            +
-          </button>
-        </form>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Tarefa</th>
-              <th>Criada em</th>
-              <th>Status</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tasks.map((task) => createRow(task)).reverse()}
-          </tbody>
-        </table>
-      </main>
-    </div>
+    <main>
+      
+      <form className="add-form" onSubmit={createTask}>
+        <input
+          type="text"
+          placeholder="Adicionar tarefa"
+          className="input-task"
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+        />
+        <button type="submit" className="btn-form">
+            +
+        </button>
+      </form>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Tarefa</th>
+            <th>Criada em</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tasks.map((task) => createRow(task)).reverse()}
+        </tbody>
+      </table>
+      
+    </main>
+
   );
 };
 
