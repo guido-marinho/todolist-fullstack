@@ -87,7 +87,12 @@ const TodoList = () => {
             <button
               className="material-symbols-outlined btn-action"
               onClick={() => {
-              // Handle edit button click here
+                // substitui o titulo por um input para edição e depois atualiza o titulo
+                const newTitle = prompt('Digite a nova tarefa');
+                if (newTitle) {
+                  updateTask({ ...task, title: newTitle });
+                }
+                
               }}
             >
             Edit

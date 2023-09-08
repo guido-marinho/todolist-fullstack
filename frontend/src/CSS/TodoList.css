@@ -99,6 +99,7 @@ selct:hover {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  width: 50px;
 }
 
 .btn-action:nth-child(1) {
@@ -108,4 +109,9 @@ selct:hover {
 
 .btn-action:nth-child(2) {
   background-color: rgba(237, 42, 42, 0.8);
+}
+
+.btn-act-container{
+  display: flex;
+  justify-content: center;
 }
