@@ -83,20 +83,22 @@ const TodoList = () => {
           </select>
         </td>
         <td>
-          <button
-            className="material-symbols-outlined btn-action"
-            onClick={() => {
+          <div className='btn-act-container'>
+            <button
+              className="material-symbols-outlined btn-action"
+              onClick={() => {
               // Handle edit button click here
-            }}
-          >
+              }}
+            >
             Edit
-          </button>
-          <button
-            className="material-symbols-outlined btn-action"
-            onClick={() => deleteTask(id)}
-          >
+            </button>
+            <button
+              className="material-symbols-outlined btn-action"
+              onClick={() => deleteTask(id)}
+            >
             Delete
-          </button>
+            </button>
+          </div>
         </td>
       </tr>
     );
