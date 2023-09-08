@@ -85,9 +85,8 @@ const TodoList = () => {
         <td>
           <div className='btn-act-container'>
             <button
-              className="material-symbols-outlined btn-action"
+              className="btn-action"
               onClick={() => {
-                // substitui o titulo por um input para edição e depois atualiza o titulo
                 const newTitle = prompt('Digite a nova tarefa');
                 if (newTitle) {
                   updateTask({ ...task, title: newTitle });
@@ -95,13 +94,13 @@ const TodoList = () => {
                 
               }}
             >
-            Edit
+            Editar
             </button>
             <button
-              className="material-symbols-outlined btn-action"
+              className="btn-action"
               onClick={() => deleteTask(id)}
             >
-            Delete
+            Deletar
             </button>
           </div>
         </td>
@@ -135,7 +134,7 @@ const TodoList = () => {
             </tr>
           </thead>
           <tbody>
-            {tasks.map((task) => createRow(task))}
+            {tasks.map((task) => createRow(task)).reverse()}
           </tbody>
         </table>
       </main>

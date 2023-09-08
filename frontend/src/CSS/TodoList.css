@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #0099FF;
+  background-color: black;
 }
 
 main {
@@ -41,7 +41,7 @@ input {
 
 /* por ter só um botão submit, poderia editar somente ele: button[type="submite] {} porém vou editar pela classe */
 .btn-form {
-  background-color: #0099FF;
+  background-color: #333;
   height: 50px;
   width: 50px;
   border: none;
